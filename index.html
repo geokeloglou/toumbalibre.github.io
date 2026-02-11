@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Toumba Libre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Toumba Libre – Cocktail Mix Wine + Cola 7.2% vol • 275ml.">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:title" content="Toumba Libre">
+  <meta property="og:description" content="Cocktail Mix Wine + Cola • 7.2% vol • 275ml">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- AGE MODAL -->
+  <div id="ageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="modal-content">
+      <p class="modal-kicker">18+ only</p>
+      <h2 id="ageTitle">Είσαι άνω των 18;</h2>
+      <div class="modal-actions">
+        <button class="btn btn-primary" type="button" onclick="enterSite()">Ναι</button>
+        <button class="btn btn-ghost" type="button" onclick="leaveSite()">Όχι</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <a class="logo-wrap" href="index.html#top" aria-label="Toumba Libre" id="logoLink">
+      <img src="assets/company-logo.jpeg" class="logo" alt="Toumba Libre">
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">Product</a>
+      <a href="#distributor">Order</a>
+      <a href="#social">Social</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Toumba Libre hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">COCKTAIL MIX</p>
+          <h1>WINE + COLA</h1>
+          <p class="hero-meta">7.2% vol • 275ml</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#distributor">Παρήγγειλε τώρα</a>
+            <a class="btn btn-ghost" href="#social">Ακολούθησε</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="assets/toumba-libre-product.png" class="bottle" alt="">
+        </div>
+      </div>
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape shape-1"></span>
+        <span class="shape shape-2"></span>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-inner">
+        <p class="section-kicker">ΤΙ ΕΙΝΑΙ</p>
+        <h2>Λευκός ξηρός οίνος + Cola</h2>
+        <p class="lead">
+          Έτοιμο προς κατανάλωση. Παγωμένο. Άνοιξε και φύγαμε.
+        </p>
+      </div>
+    </section>
+
+    <section class="distributor" id="distributor">
+      <div class="section-inner">
+        <p class="section-kicker">ΠΑΡΑΓΓΕΛΙΑ</p>
+        <h2 class="form-title">Τηλέφωνο επικοινωνίας</h2>
+        <a class="phone-link phone-cta" href="tel:2316076956">Καλέστε 2316076956</a>
+        <p class="order-note">Ή εναλλακτικά</p>
+        <h2 class="form-title">Φόρμα Παραγγελίας</h2>
+        <form id="distForm" class="dist-form">
+          <label class="field">
+            <span>Επωνυμία</span>
+            <input type="text" name="company" placeholder="Π.χ. Toumba Drinks" required>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="name@email.com" required>
+          </label>
+          <label class="field">
+            <span>Διεύθυνση</span>
+            <input type="text" name="address" placeholder="Οδός, αριθμός, πόλη, Τ.Κ." required>
+          </label>
+          <label class="field">
+            <span>Τηλέφωνο</span>
+            <input type="tel" name="phone" placeholder="69XXXXXXXX" required>
+          </label>
+          <button class="btn btn-primary" type="submit">Αποστολή</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="social" id="social">
+      <div class="section-inner">
+        <p class="section-kicker">SOCIAL</p>
+        <h2>Ακολούθησε μας</h2>
+        <div class="social-buttons">
+          <a class="btn btn-light" href="https://www.instagram.com/toumbalibre" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-light" href="https://www.tiktok.com/@toumba.libre" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    TOUMBA LIBRE COMPANY Ε.Ε. • Έδρα: Αγίας Φωτεινής 5, Νέα Πολιτεία, Κορδελιού-Ευόσμου, Θεσσαλονίκης, Τ.Κ. 56224 • ΑΦΜ 803007611 • Γ.Ε.ΜΗ. 187274604000 • Απολαύστε υπεύθυνα 18+
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
