@@ -46,6 +46,14 @@ function getLanguageFromUrl() {
   return null;
 }
 
+function getDefaultLanguageByLocation() {
+  const locale = (navigator.language || "").toLowerCase();
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+  const isGreekLocale = locale.startsWith("el");
+  const isGreeceTimeZone = timeZone === "Europe/Athens";
+  return isGreekLocale || isGreeceTimeZone ? "el" : "en";
+}
+
 function applyLanguage(lang) {
   const translations = i18n[lang] || i18n.el || fallbackI18n.el;
   currentLanguage = i18n[lang] ? lang : "el";
@@ -104,10 +112,10 @@ function applyLanguage(lang) {
 
 const languageFromUrl = getLanguageFromUrl();
 const savedLanguage = localStorage.getItem("toumba-lang");
-const browserLanguage =
-  navigator.language && navigator.language.toLowerCase().startsWith("el") ? "el" : "en";
+const locationBasedLanguage = getDefaultLanguageByLocation();
 const initialLanguage =
-  languageFromUrl || (savedLanguage === "el" || savedLanguage === "en" ? savedLanguage : browserLanguage);
+  languageFromUrl ||
+  (savedLanguage === "el" || savedLanguage === "en" ? savedLanguage : locationBasedLanguage);
 applyLanguage(initialLanguage);
 
 document.querySelectorAll("[data-lang-switch]").forEach((button) => {
