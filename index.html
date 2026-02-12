@@ -2,20 +2,32 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Toumba Libre</title>
+  <title>Toumba Libre | Cocktail Mix Wine + Cola 7.2% vol</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Toumba Libre – Cocktail Mix Wine + Cola 7.2% vol • 275ml.">
+  <meta id="metaDescription" name="description" content="Toumba Libre: Cocktail Mix Wine + Cola, 7.2% vol, 275ml. Ετοιμο προς καταναλωση. Παραγγελιες για επαγγελματιες.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link id="canonicalLink" rel="canonical" href="https://toumbalibre.com/">
+  <link id="hrefLangEl" rel="alternate" hreflang="el" href="https://toumbalibre.com/?lang=el">
+  <link id="hrefLangEn" rel="alternate" hreflang="en" href="https://toumbalibre.com/?lang=en">
+  <link id="hrefLangDefault" rel="alternate" hreflang="x-default" href="https://toumbalibre.com/">
   <meta name="theme-color" content="#000000">
 
   <meta property="og:title" content="Toumba Libre">
-  <meta property="og:description" content="Cocktail Mix Wine + Cola • 7.2% vol • 275ml">
+  <meta id="metaOgDescription" property="og:description" content="Cocktail Mix Wine + Cola • 7.2% vol • 275ml">
   <meta property="og:type" content="website">
-
+  <meta id="metaOgUrl" property="og:url" content="https://toumbalibre.com/">
+  <meta property="og:site_name" content="Toumba Libre">
+  <meta property="og:image" content="https://toumbalibre.com/assets/toumba-libre-product.png">
+  <meta property="og:image:alt" content="Toumba Libre bottle product image">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Toumba Libre">
+  <meta id="metaTwitterDescription" name="twitter:description" content="Cocktail Mix Wine + Cola • 7.2% vol • 275ml">
+  <meta name="twitter:image" content="https://toumbalibre.com/assets/toumba-libre-product.png">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,36 +35,40 @@
   <!-- AGE MODAL -->
   <div id="ageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
     <div class="modal-content">
-      <p class="modal-kicker">18+ only</p>
-      <h2 id="ageTitle">Είσαι άνω των 18;</h2>
+      <p class="modal-kicker" data-i18n="modal_kicker">18+ only</p>
+      <h2 id="ageTitle" data-i18n="modal_title">Είσαι άνω των 18;</h2>
       <div class="modal-actions">
-        <button class="btn btn-primary" type="button" onclick="enterSite()">Ναι</button>
-        <button class="btn btn-ghost" type="button" onclick="leaveSite()">Όχι</button>
+        <button class="btn btn-primary" type="button" onclick="enterSite()" data-i18n="modal_yes">Ναι</button>
+        <button class="btn btn-ghost" type="button" onclick="leaveSite()" data-i18n="modal_no">Όχι</button>
       </div>
     </div>
   </div>
 
   <header class="site-header" id="top">
-    <a class="logo-wrap" href="index.html#top" aria-label="Toumba Libre" id="logoLink">
+    <a class="logo-wrap" href="#top" aria-label="Toumba Libre" id="logoLink">
       <img src="assets/company-logo.jpeg" class="logo" alt="Toumba Libre">
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="#about">Product</a>
-      <a href="#distributor">Order</a>
-      <a href="#social">Social</a>
+      <a href="#top" data-i18n="nav_product">Product</a>
+      <a href="#distributor" data-i18n="nav_order">Order</a>
+      <a href="#social" data-i18n="nav_social">Social</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button class="lang-btn is-active" type="button" data-lang-switch="el">GR</button>
+      <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-label="Toumba Libre hero">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-kicker">COCKTAIL MIX</p>
-          <h1>WINE + COLA</h1>
+          <p class="hero-kicker" data-i18n="hero_kicker">COCKTAIL MIX</p>
+          <h1 data-i18n="hero_title">WINE + COLA</h1>
           <p class="hero-meta">7.2% vol • 275ml</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#distributor">Παρήγγειλε τώρα</a>
-            <a class="btn btn-ghost" href="#social">Ακολούθησε</a>
+            <a class="btn btn-primary" href="#distributor" data-i18n="hero_order">Παρήγγειλε τώρα</a>
+            <a class="btn btn-ghost" href="#social" data-i18n="hero_follow">Ακολούθησε</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -67,9 +83,9 @@
 
     <section class="about" id="about">
       <div class="section-inner">
-        <p class="section-kicker">ΤΙ ΕΙΝΑΙ</p>
-        <h2>Λευκός οίνος + Cola</h2>
-        <p class="lead">
+        <p class="section-kicker" data-i18n="about_kicker">ΤΙ ΕΙΝΑΙ</p>
+        <h2 data-i18n="about_title">Λευκός οίνος + Cola</h2>
+        <p class="lead" data-i18n="about_lead">
           Έτοιμο προς κατανάλωση. Παγωμένο. Άνοιξε και φύγαμε.
         </p>
       </div>
@@ -77,49 +93,75 @@
 
     <section class="distributor" id="distributor">
       <div class="section-inner">
-        <p class="section-kicker">ΠΑΡΑΓΓΕΛΙΑ</p>
-        <h2 class="form-title">Τηλέφωνο επικοινωνίας</h2>
-        <a class="phone-link phone-cta" href="tel:2316076956">Καλέστε 2316076956</a>
-        <p class="order-note">Ή εναλλακτικά</p>
-        <h2 class="form-title">Φόρμα Παραγγελίας</h2>
+        <p class="section-kicker" data-i18n="order_kicker">ΠΑΡΑΓΓΕΛΙΑ</p>
+        <h2 class="form-title" data-i18n="contact_title">Τηλέφωνο επικοινωνίας</h2>
+        <a class="phone-link phone-cta" href="tel:2316076956" data-i18n="call_cta">Καλέστε 2316076956</a>
+        <p class="order-note" data-i18n="order_note">Ή εναλλακτικά</p>
+        <h2 class="form-title" data-i18n="form_title">Φόρμα Παραγγελίας</h2>
         <form id="distForm" class="dist-form">
           <label class="field">
-            <span>Επωνυμία</span>
-            <input type="text" name="company" placeholder="Π.χ. Toumba Drinks" required>
+            <span data-i18n="label_company">Επωνυμία</span>
+            <input type="text" name="company" placeholder="Π.χ. Εταιρεία Ε.Ε." data-i18n-placeholder="ph_company" required>
           </label>
           <label class="field">
-            <span>Email</span>
-            <input type="email" name="email" placeholder="name@email.com" required>
+            <span data-i18n="label_email">Email</span>
+            <input type="email" name="email" placeholder="name@email.com" data-i18n-placeholder="ph_email" required>
           </label>
           <label class="field">
-            <span>Διεύθυνση</span>
-            <input type="text" name="address" placeholder="Οδός, αριθμός, πόλη, Τ.Κ." required>
+            <span data-i18n="label_afm">ΑΦΜ</span>
+            <input type="text" name="afm" placeholder="123456789" data-i18n-placeholder="ph_afm" inputmode="numeric" pattern="[0-9]{9}" maxlength="9" required>
           </label>
           <label class="field">
-            <span>Τηλέφωνο</span>
-            <input type="tel" name="phone" placeholder="69XXXXXXXX" required>
+            <span data-i18n="label_address">Διεύθυνση</span>
+            <input type="text" name="address" placeholder="Οδός, αριθμός, πόλη, Τ.Κ." data-i18n-placeholder="ph_address" required>
           </label>
-          <button class="btn btn-primary" type="submit">Αποστολή</button>
+          <label class="field">
+            <span data-i18n="label_phone">Τηλέφωνο</span>
+            <input type="tel" name="phone" placeholder="69XXXXXXXX" data-i18n-placeholder="ph_phone" required>
+          </label>
+          <label class="field">
+            <span class="field-label-with-tip">
+              <span data-i18n="label_boxes">Κιβώτια</span>
+              <span class="tooltip-wrap">
+                <button type="button" class="tooltip-trigger" aria-label="Πληροφορίες για τα κιβώτια" data-i18n-aria-label="tooltip_aria">?</button>
+                <span class="tooltip-text" role="tooltip" data-i18n="tooltip_text">Κάθε κιβώτιο περιλαμβάνει 24 τεμάχια.</span>
+              </span>
+            </span>
+            <input type="number" name="boxes" placeholder="Π.χ. 10" data-i18n-placeholder="ph_boxes" min="1" step="1" required>
+          </label>
+          <label class="field">
+            <span data-i18n="label_notes">Σημειώσεις</span>
+            <input type="text" name="notes" placeholder="Ώρες παράδοσης, περιοχή, σχόλια" data-i18n-placeholder="ph_notes">
+          </label>
+          <button class="btn btn-primary" type="submit" data-i18n="submit_btn">Αποστολή</button>
         </form>
       </div>
     </section>
 
     <section class="social" id="social">
       <div class="section-inner">
-        <p class="section-kicker">SOCIAL</p>
-        <h2>Ακολούθησε μας</h2>
-        <div class="social-buttons">
-          <a class="btn btn-light" href="https://www.instagram.com/toumbalibre" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn btn-light" href="https://www.tiktok.com/@toumba.libre" target="_blank" rel="noopener">TikTok</a>
+        <p class="section-kicker" data-i18n="social_kicker">SOCIAL</p>
+        <h2 class="social-title" data-i18n="social_title">Ακολούθησε μας</h2>
+        <p class="social-subtitle" data-i18n="social_subtitle">Νέα, συνεργασίες και περιεχόμενο.</p>
+        <div class="social-buttons" role="list">
+          <a class="social-link social-link-instagram" role="listitem" href="https://www.instagram.com/toumbalibre" target="_blank" rel="noopener noreferrer">
+            <span class="social-link-label">Instagram</span>
+            <span class="social-link-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-link social-link-tiktok" role="listitem" href="https://www.tiktok.com/@toumba.libre" target="_blank" rel="noopener noreferrer">
+            <span class="social-link-label">TikTok</span>
+            <span class="social-link-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-i18n="footer_text">
     TOUMBA LIBRE COMPANY Ε.Ε. • Έδρα: Αγίας Φωτεινής 5, Νέα Πολιτεία, Κορδελιού-Ευόσμου, Θεσσαλονίκης, Τ.Κ. 56224 • ΑΦΜ 803007611 • Γ.Ε.ΜΗ. 187274604000 • Απολαύστε υπεύθυνα 18+
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
