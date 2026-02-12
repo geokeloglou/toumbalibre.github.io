@@ -25,6 +25,11 @@ const canonicalBaseUrl = canonicalLinkElement
   ? canonicalLinkElement.getAttribute("href").split("?")[0]
   : `${window.location.origin}${window.location.pathname}`;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const bottle = document.querySelector(".bottle");
+let latestScroll = 0;
+let ticking = false;
+let bottleIntroRunning = false;
+const isSmallDevice = window.matchMedia("(max-width: 900px)");
 
 function getUrlForLanguage(lang) {
   const url = new URL(window.location.href);
@@ -130,9 +135,29 @@ function hideModal() {
   bodyElement.classList.remove("modal-open");
 }
 
+function startBottleIntro() {
+  if (!bottle) {
+    onScroll();
+    return;
+  }
+
+  bottleIntroRunning = true;
+  bottle.classList.remove("bottle-load-in");
+  // Restart animation when entering from the age gate.
+  void bottle.offsetWidth;
+  bottle.classList.add("bottle-load-in");
+
+  window.setTimeout(() => {
+    bottle.classList.remove("bottle-load-in");
+    bottleIntroRunning = false;
+    onScroll();
+  }, 950);
+}
+
 function enterSite() {
   localStorage.setItem("toumba-age-ok", "yes");
   hideModal();
+  startBottleIntro();
 }
 
 function leaveSite() {
@@ -142,24 +167,9 @@ function leaveSite() {
 const ageOk = localStorage.getItem("toumba-age-ok");
 if (ageOk === "yes") {
   hideModal();
+  startBottleIntro();
 } else {
   showModal();
-}
-
-const bottle = document.querySelector(".bottle");
-let latestScroll = 0;
-let ticking = false;
-let bottleIntroRunning = false;
-const isSmallDevice = window.matchMedia("(max-width: 900px)");
-
-if (bottle && !prefersReducedMotion.matches) {
-  bottleIntroRunning = true;
-  bottle.classList.add("bottle-load-in");
-  window.setTimeout(() => {
-    bottle.classList.remove("bottle-load-in");
-    bottleIntroRunning = false;
-    onScroll();
-  }, 950);
 }
 
 function onScroll() {
