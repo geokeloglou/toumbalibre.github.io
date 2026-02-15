@@ -26,10 +26,7 @@ const canonicalBaseUrl = canonicalLinkElement
   : `${window.location.origin}${window.location.pathname}`;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const bottle = document.querySelector(".bottle");
-let latestScroll = 0;
-let ticking = false;
 let bottleIntroRunning = false;
-const isSmallDevice = window.matchMedia("(max-width: 900px)");
 
 function getUrlForLanguage(lang) {
   const url = new URL(window.location.href);
@@ -185,22 +182,8 @@ function onScroll() {
     return;
   }
 
-  if (isSmallDevice.matches || prefersReducedMotion.matches) {
-    if (bottle) {
-      bottle.style.transform = "none";
-    }
-    return;
-  }
-
-  latestScroll = window.scrollY || 0;
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      if (bottle) {
-        bottle.style.transform = `translateY(${latestScroll * 0.3}px)`;
-      }
-      ticking = false;
-    });
-    ticking = true;
+  if (bottle) {
+    bottle.style.transform = "none";
   }
 }
 
