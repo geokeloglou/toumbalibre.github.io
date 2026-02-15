@@ -50,7 +50,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 18px 6vw;
+  padding: 22px 6vw;
   background: rgba(243, 243, 243, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 2px solid var(--black);
@@ -68,7 +68,7 @@ main {
 }
 
 .logo {
-  width: 108px;
+  width: 118px;
 }
 
 
@@ -647,11 +647,11 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .site-header {
-    padding: 14px 5vw;
+    padding: 16px 5vw;
   }
 
   .logo {
-    width: 108px;
+    width: 112px;
   }
 
   section {
