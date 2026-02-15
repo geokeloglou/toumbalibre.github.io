@@ -149,7 +149,7 @@ main {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 40px;
+  gap: clamp(14px, 2.5vw, 26px);
 }
 
 .hero-text h1 {
@@ -197,7 +197,7 @@ main {
 }
 
 .bottle {
-  width: min(320px, 75vw);
+  width: min(420px, 86vw);
   filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35));
   transition: transform 0.2s ease-out;
 }
@@ -610,6 +610,7 @@ body.modal-open {
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .hero-text {
